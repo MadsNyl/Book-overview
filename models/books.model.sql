@@ -6,8 +6,7 @@ CREATE TABLE book(
     title TEXT NOT NULL,
     author TEXT NOT NULL,
     pages INT NOT NULL,
-    rating INT,
-    status BOOLEAN NOT NULL
+    status BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE wishlist(
@@ -15,6 +14,11 @@ CREATE TABLE wishlist(
     title TEXT NOT NULL,
     author TEXT NOT NULL,
     link TEXT,
-    price INT
+    price FLOAT
 );
+
+INSERT INTO book (title, author, pages) VALUES('Harry Potter 1', 'JK Rowling', 532);
+INSERT INTO book (title, author, pages) VALUES('Harry Potter 2', 'JK Rowling', 632);
+INSERT INTO book (title, author, pages) VALUES('Harry Potter 3', 'JK Rowling', 762);
+INSERT INTO book (title, author, pages, status) VALUES('Harry Potter 3', 'JK Rowling', 762, TRUE);
 
