@@ -16,9 +16,9 @@ exports.createBook = async (req, res) => {
 
 // get all books
 exports.getAllBooks = async (req, res) => {
-    const page = req.query.page * 5
+    const page = req.query.page * 6
     try {
-        const books = await pool.query('SELECT * FROM book LIMIT 5 OFFSET $1', [page])
+        const books = await pool.query('SELECT * FROM book ORDER BY title LIMIT 6 OFFSET $1', [page])
         res.status(200).json(books.rows)
     } catch(error) {    
         res.status(500).json({ message: error.message })

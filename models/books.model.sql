@@ -22,3 +22,9 @@ INSERT INTO book (title, author, pages) VALUES('Harry Potter 2', 'JK Rowling', 6
 INSERT INTO book (title, author, pages) VALUES('Harry Potter 3', 'JK Rowling', 762);
 INSERT INTO book (title, author, pages, status) VALUES('Harry Potter 3', 'JK Rowling', 762, TRUE);
 
+INSERT INTO book (title, author, pages) VALUES('Harry Potter 5', 'JK Rowling', 762);
+INSERT INTO book (title, author, pages) VALUES('Harry Potter 6', 'JK Rowling', 762);
+INSERT INTO book (title, author, pages) VALUES('Harry Potter 7', 'JK Rowling', 762);
+INSERT INTO book (title, author, pages) VALUES('Harry Potter 8', 'JK Rowling', 762);
+
+
