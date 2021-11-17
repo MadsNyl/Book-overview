@@ -97,6 +97,7 @@ export default {
             console.log(response)
 
             this.getAllBooks(this.page)
+            this.getNumberOfReadBooks()
         },
         async nextPage(){
             if (this.books.length === 6) {
@@ -116,17 +117,20 @@ export default {
             const response = await axios.delete(`/books/delete/${id}/`)
             console.log(response)
             this.getAllBooks(this.page)
+            this.getNumberOfBooks()
+            this.getNumberOfReadBooks()
         },
         async addBook(){
             const data = {
                 title: this.title,
                 author: this.author,
-                pages: parseInt(this.pages)
+                pages: parseFloat(this.pages)
             }
             const response = await axios.post('/books/new/', data)
             console.log(response)
             this.showBookForm = false
             this.getAllBooks(this.page)
+            this.getNumberOfBooks()
         }
     }
 }
@@ -140,6 +144,7 @@ export default {
     .addBook{
         display: flex;
         justify-content: center;
+        align-items: center;
         padding: 5px 0;
         
         button{
@@ -155,6 +160,15 @@ export default {
             &:hover{
                 opacity: .5;
                 box-shadow: none;
+            }
+        }
+
+        .infoAboutBooks{
+            display: flex;
+            margin: 0 10px;
+
+            p{
+                margin: 0 10px;
             }
         }
     }
@@ -235,8 +249,8 @@ export default {
 
     .book{
         position: relative;
-        width: 300px;
-        margin: 14px 0;
+        width: 280px;
+        margin: 14px 20px;
         padding: 10px 40px;
         background: #d8c7b8;
         border-radius: 8px;

@@ -13,6 +13,7 @@ CREATE TABLE wishlist(
     id BIGSERIAL NOT NULL PRIMARY KEY,
     title TEXT NOT NULL,
     author TEXT NOT NULL,
+    pages TEXT NOT NULL,
     link TEXT,
     price FLOAT
 );
